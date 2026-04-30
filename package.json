@@ -1,0 +1,28 @@
+{
+  "name": "prasunet-education-platform",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "npm@10.0.0",
+  "workspaces": [
+    "web",
+    "management",
+    "student",
+    "staff",
+    "parents",
+    "admin",
+    "backend"
+  ],
+  "scripts": {
+    "dev:web": "npm --prefix web run dev",
+    "dev:management": "npm --prefix management run dev",
+    "dev:student": "npm --prefix student run dev",
+    "dev:staff": "npm --prefix staff run dev",
+    "dev:parents": "npm --prefix parents run dev",
+    "dev:admin": "npm --prefix admin run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:web\" \"npm run dev:management\" \"npm run dev:student\" \"npm run dev:staff\" \"npm run dev:parents\" \"npm run dev:admin\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

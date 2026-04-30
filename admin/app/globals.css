@@ -1,0 +1,57 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  background: #f5f5ff;
+  color: #111827;
+}
+
+html, body { margin: 0; }
+body { min-height: 100vh; }
+
+.container {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+h1 { margin-bottom: 0.5rem; }
+p { line-height: 1.75; }
+.card, .info-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #dbeafe;
+  margin-top: 1.5rem;
+}
+label { display: block; margin-bottom: 0.75rem; font-weight: 600; }
+input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.85rem;
+  margin-bottom: 1rem;
+}
+button {
+  width: 100%;
+  padding: 1rem;
+  background: #1e3a8a;
+  border: none;
+  color: white;
+  border-radius: 0.85rem;
+  cursor: pointer;
+}
+.message { margin-top: 1rem; color: #1e3a8a; }
+.org-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.org-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.org-card button {
+  width: auto;
+  margin-top: 0.75rem;
+  background: #2563eb;
+}
