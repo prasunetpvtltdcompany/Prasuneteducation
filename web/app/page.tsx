@@ -53,6 +53,14 @@ export default function Home() {
                 <h2>Discover Our School / College Mobile App</h2>
                 <p>With the Prasynx School Mobile App, managing school tasks is easier than ever—accessible anytime, anywhere, with just a tap.</p>
                 <a href="#" className="btn btn-primary">Download App Now</a>
+                <div className="app-stores">
+                  <a href="#" className="store-badge">
+                    <img src="/images/logos/AppStore.svg" alt="Download on App Store" />
+                  </a>
+                  <a href="#" className="store-badge">
+                    <img src="/images/logos/GooglePlaystore.svg" alt="Get it on Google Play" />
+                  </a>
+                </div>
               </div>
             </div>
           </section>

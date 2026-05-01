@@ -393,6 +393,27 @@ select {
   margin: 0 0 32px 0;
 }
 
+.app-stores {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.store-badge {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.store-badge:hover {
+  transform: translateY(-2px);
+}
+
+.store-badge img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
 .weather-bar {
   background: #dc2626;
   color: white;
@@ -1127,6 +1148,14 @@ select {
 
   .app-image-placeholder {
     height: 250px;
+  }
+
+  .app-stores {
+    gap: 12px;
+  }
+
+  .store-badge img {
+    height: 45px;
   }
 }
 
