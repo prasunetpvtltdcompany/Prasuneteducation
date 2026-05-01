@@ -1,4 +1,5 @@
 import { Star, Quote } from 'lucide-react';
+import SiteShell from "../components/SiteShell";
 
 export default function Customers() {
   const testimonials = [
@@ -61,29 +62,9 @@ export default function Customers() {
     }
   ];
 
-  return (
-    <div className="site-body">
-      <header className="navbar">
-        <div className="navbar-container">
-          <div className="navbar-logo">
-            <div className="navbar-brand">Prasynx</div>
-          </div>
-          <nav className="navbar-nav">
-            <a href="/" className="navbar-link">Home</a>
-            <a href="/solutions" className="navbar-link">Solutions</a>
-            <a href="/platform" className="navbar-link">Platform</a>
-            <a href="/customers" className="navbar-link">Customers</a>
-            <a href="/resources" className="navbar-link">Resources</a>
-            <a href="/contact" className="navbar-link">Contact</a>
-          </nav>
-          <div className="navbar-actions">
-            <a href="/book-demo" className="navbar-link secondary-link">Book Demo</a>
-            <a href="/" className="btn btn-primary">Get Started</a>
-          </div>
-        </div>
-      </header>
-
-      <main className="landing-page">
+    return (
+    <SiteShell>
+<main className="landing-page">
         <section className="hero-panel">
           <div className="hero-branding">
             <div className="hero-logo-alt">Our Customers</div>
@@ -173,36 +154,6 @@ export default function Customers() {
           </div>
         </section>
       </main>
-
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-section">
-            <div className="footer-brand">Prasynx</div>
-            <p>Education OS for the future.</p>
-          </div>
-          <div className="footer-section">
-            <h3>Customers</h3>
-            <a href="/customers">Case Studies</a>
-            <a href="/customers">Testimonials</a>
-            <a href="/book-demo">Partner With Us</a>
-          </div>
-          <div className="footer-section">
-            <h3>Company</h3>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact</a>
-            <a href="/careers">Careers</a>
-          </div>
-          <div className="footer-section">
-            <h3>Legal</h3>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/terms">Terms & Conditions</a>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2026 Prasynx. All rights reserved.</p>
-          <p className="footer-powered">Powered by Prasunet.</p>
-        </div>
-      </footer>
-    </div>
+    </SiteShell>
   );
 }
