@@ -43,10 +43,11 @@ export default function Home() {
           <section className="mobile-app-section">
             <div className="mobile-app-container">
               <div className="mobile-app-image">
-                <div className="app-image-placeholder">
-                  <span>App Screenshot</span>
-                  <p>Add your mobile app screenshot to: <code>/public/images/products/</code></p>
-                </div>
+                <img 
+                  src="/images/products/mobileimage.png" 
+                  alt="Prasynx Mobile App Screenshot"
+                  className="app-image"
+                />
               </div>
               <div className="mobile-app-content">
                 <h2>Discover Our School / College Mobile App</h2>
