@@ -40,6 +40,42 @@ export default function Home() {
             </div>
           </section>
 
+          <section className="home-video-section">
+            <div className="home-video-container">
+              <div className="home-video-content">
+                <h2>Welcome to Prasynx Education OS</h2>
+                <p>Experience the future of educational management with our comprehensive platform designed for schools, colleges, and educational institutions across India.</p>
+                <div className="home-features">
+                  <div className="home-feature">
+                    <div className="feature-icon">🎓</div>
+                    <span>Student Management</span>
+                  </div>
+                  <div className="home-feature">
+                    <div className="feature-icon">👨‍🏫</div>
+                    <span>Staff Portal</span>
+                  </div>
+                  <div className="home-feature">
+                    <div className="feature-icon">👨‍👩‍👧‍👦</div>
+                    <span>Parent Engagement</span>
+                  </div>
+                  <div className="home-feature">
+                    <div className="feature-icon">📊</div>
+                    <span>Analytics & Reports</span>
+                  </div>
+                </div>
+              </div>
+              <div className="home-video-player">
+                <div className="video-placeholder">
+                  <div className="play-button">
+                    <span>▶</span>
+                  </div>
+                  <p>Watch Our Introduction Video</p>
+                  <small>Learn how Prasynx transforms education</small>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section className="mobile-app-section">
             <div className="mobile-app-container">
               <div className="mobile-app-image">
