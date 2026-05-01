@@ -65,13 +65,17 @@ export default function Home() {
                 </div>
               </div>
               <div className="home-video-player">
-                <div className="video-placeholder">
-                  <div className="play-button">
-                    <span>▶</span>
-                  </div>
-                  <p>Watch Our Introduction Video</p>
-                  <small>Learn how Prasynx transforms education</small>
-                </div>
+                <video 
+                  className="home-video"
+                  controls
+                  poster="/images/backgrounds/video-poster.jpg"
+                  preload="metadata"
+                >
+                  <source src="/images/backgrounds/schoolgirlvideo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <p className="video-caption">Watch Our Introduction Video</p>
+                <small className="video-subtitle">Learn how Prasynx transforms education</small>
               </div>
             </div>
           </section>

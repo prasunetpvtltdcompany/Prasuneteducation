@@ -477,60 +477,33 @@ select {
 
 .home-video-player {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 16px;
 }
 
-.video-placeholder {
+.home-video {
   width: 100%;
   max-width: 500px;
   height: 280px;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  position: relative;
   box-shadow: 0 25px 50px rgba(30, 64, 175, 0.25);
+  object-fit: cover;
 }
 
-.play-button {
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.play-button:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
-}
-
-.play-button span {
-  font-size: 2rem;
-  color: white;
-}
-
-.video-placeholder p {
+.video-caption {
   font-size: 1.3rem;
   font-weight: 600;
-  margin: 8px 0 4px 0;
+  color: #0f172a;
+  margin: 0;
+  text-align: center;
 }
 
-.video-placeholder small {
+.video-subtitle {
   font-size: 0.9rem;
-  opacity: 0.9;
+  color: #64748b;
+  text-align: center;
+  margin: 0;
 }
 
 .weather-bar {
@@ -1294,17 +1267,16 @@ select {
     grid-template-columns: 1fr;
   }
 
-  .video-placeholder {
+  .home-video {
     height: 240px;
   }
 
-  .play-button {
-    width: 70px;
-    height: 70px;
+  .video-caption {
+    font-size: 1.2rem;
   }
 
-  .play-button span {
-    font-size: 1.8rem;
+  .video-subtitle {
+    font-size: 0.85rem;
   }
 }
 
