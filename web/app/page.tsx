@@ -39,6 +39,21 @@ export default function Home() {
               </article>
             </div>
           </section>
+
+          <section className="mobile-app-section">
+            <div className="mobile-app-container">
+              <div className="mobile-app-image">
+                <div className="app-image-placeholder">
+                  <span>App Screenshot</span>
+                </div>
+              </div>
+              <div className="mobile-app-content">
+                <h2>Discover Our School / College Mobile App</h2>
+                <p>With the Prasynx School Mobile App, managing school tasks is easier than ever—accessible anytime, anywhere, with just a tap.</p>
+                <a href="#" className="btn btn-primary">Download App Now</a>
+              </div>
+            </div>
+          </section>
         </section>
       </main>
     </SiteShell>
