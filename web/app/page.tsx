@@ -45,6 +45,7 @@ export default function Home() {
               <div className="mobile-app-image">
                 <div className="app-image-placeholder">
                   <span>App Screenshot</span>
+                  <p>Add your mobile app screenshot to: <code>/public/images/products/</code></p>
                 </div>
               </div>
               <div className="mobile-app-content">
