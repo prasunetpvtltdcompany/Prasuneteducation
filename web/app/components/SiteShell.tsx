@@ -75,10 +75,9 @@ const footerSections = [
 
 type SiteShellProps = {
   children: ReactNode;
-  onGetStarted?: () => void;
 };
 
-export default function SiteShell({ children, onGetStarted }: SiteShellProps) {
+export default function SiteShell({ children }: SiteShellProps) {
   return (
     <div className="site-body">
       <header className="navbar">
@@ -99,7 +98,7 @@ export default function SiteShell({ children, onGetStarted }: SiteShellProps) {
           </nav>
           <div className="navbar-actions">
             <a href="/book-demo" className="navbar-link secondary-link">Book Demo</a>
-            <button onClick={onGetStarted} className="btn btn-primary">Get Started</button>
+            <a href="/getstarted" className="btn btn-primary">Get Started</a>
           </div>
         </div>
       </header>
