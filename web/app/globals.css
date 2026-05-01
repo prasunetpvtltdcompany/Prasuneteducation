@@ -194,10 +194,94 @@ select {
   font-weight: 600;
 }
 
+.feature-section {
+  max-width: 1280px;
+  margin: 0 auto 48px;
+  padding: 40px 28px;
+  border-radius: 36px;
+  background: linear-gradient(180deg, #2e57d5 0%, #1a3ca8 100%);
+  box-shadow: 0 32px 80px rgba(46, 87, 213, 0.18);
+}
+
+.feature-intro {
+  text-align: center;
+  color: white;
+  margin-bottom: 32px;
+}
+
+.feature-intro h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1.03;
+  font-weight: 800;
+}
+
+.feature-intro h1 span {
+  display: inline-flex;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: #ff631f;
+  color: white;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 32px;
+  padding: 32px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.feature-card-center {
+  transform: translateY(-12px);
+}
+
+.feature-card h3 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.45rem;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.8;
+  flex-grow: 1;
+}
+
+.feature-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #475569;
+  list-style: disc;
+  line-height: 1.8;
+}
+
+.feature-card ul li {
+  margin-bottom: 0.75rem;
+}
+
 .portal-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 24px;
+}
+
+.portal-grid.hidden {
+  display: none;
+}
+
+.portal-grid.visible {
+  display: grid;
 }
 
 .portal-card {
@@ -492,14 +576,41 @@ select {
 }
 
 @media (max-width: 1200px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .portal-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .feature-section {
+    padding: 32px 20px;
+  }
+
+  .feature-intro h1 {
+    font-size: 2.3rem;
   }
 }
 
 @media (max-width: 760px) {
   .hero-panel {
     padding: 32px 16px 64px;
+  }
+
+  .feature-section {
+    margin-bottom: 32px;
+    padding: 28px 16px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card-center {
+    transform: none;
   }
 
   .portal-grid {

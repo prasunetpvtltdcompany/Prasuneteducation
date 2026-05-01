@@ -1,4 +1,7 @@
+'use client';
+
 import { GraduationCap, UserCheck, Heart, Shield, Globe, Sun, CloudRain, Phone, Mail, MapPin, Share2, MessageCircle, Users } from 'lucide-react';
+import { useState } from 'react';
 import SiteShell from "./components/SiteShell";
 
 const loginPortals = [
@@ -29,19 +32,13 @@ const loginPortals = [
   }
 ];
 
-const forecast = [
-  { day: 'Friday', temp: '38°C', icon: Sun },
-  { day: 'Saturday', temp: '25°C', icon: CloudRain },
-  { day: 'Sunday', temp: '41°C', icon: CloudRain },
-  { day: 'Monday', temp: '28°C', icon: CloudRain },
-  { day: 'Tuesday', temp: '22°C', icon: CloudRain },
-  { day: 'Wednesday', temp: '22°C', icon: CloudRain },
-  { day: 'Thursday', temp: '24°C', icon: Sun }
-];
+
 
 export default function Home() {
-    return (
-    <SiteShell>
+  const [showPortals, setShowPortals] = useState(false);
+
+  return (
+    <SiteShell onGetStarted={() => setShowPortals(true)}>
 <main className="landing-page">
         <section className="hero-panel">
           <div className="hero-branding">
@@ -49,7 +46,34 @@ export default function Home() {
             <p className="hero-subtitle">Prasynx – One Platform for Every Role </p>
           </div>
 
-          <div id="portals" className="portal-grid">
+          <section className="feature-section">
+            <div className="feature-intro">
+              <h1>We Make finding Jobs <span>Simple</span>, Swift and Secure</h1>
+            </div>
+            <div className="feature-grid">
+              <article className="feature-card">
+                <h3>Our Vision</h3>
+                <p>Our vision is to unlock 100 Million Jobs by Empowering 10 Million MSMEs & enterprises. We are on a mission to become a unified, credentialed employment platform for Bharat that bridges:</p>
+                <ul>
+                  <li>Rural–Urban gap</li>
+                  <li>Formal–Informal gap</li>
+                  <li>Skilled–Unskilled gap</li>
+                </ul>
+              </article>
+
+              <article className="feature-card feature-card-center">
+                <h3>Our Mission</h3>
+                <p>To create India&apos;s most trusted and accessible employment platform to enable structured, scalable, and inclusive hiring across Bharat.</p>
+              </article>
+
+              <article className="feature-card">
+                <h3>Our Purpose</h3>
+                <p>To connect verified workers with local employers and make hiring simple, trusted, and accessible across Bharat.</p>
+              </article>
+            </div>
+          </section>
+
+          <div id="portals" className={`portal-grid ${showPortals ? 'visible' : 'hidden'}`}>
             {loginPortals.map((portal) => {
               const Icon = portal.icon;
               return (
