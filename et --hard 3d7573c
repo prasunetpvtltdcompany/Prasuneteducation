@@ -1,0 +1,17 @@
+[33m3d7573e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mPrasynx-Abhishek[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/Prasynx-Pramod[m[33m, [m[1;31morigin/Prasynx-Aryan[m[33m, [m[1;31morigin/Prasynx-Abhishek[m[33m, [m[1;31morigin/HEAD[m[33m)[m feat: Replace video placeholder with actual school girl video
+[33mb9c403f[m feat: Add home video section with content and video placeholder
+[33maf5eadd[m feat: Add app store download badges below CTA button
+[33mccbd6b4[m style: Remove shadow effect from mobile app image
+[33m37eff05[m feat: Add mobile app screenshot image
+[33m7a53e06[m feat: Create organized images folder structure
+[33md36d242[m feat: Add mobile app discovery section to homepage
+[33m01601a4[m feat: Create dedicated getstarted page with login portals
+[33mf19ee54[m feat: Add interactive 'Get Started' button that reveals login portals
+[33m181f1a1[m Add ignoreDeprecations to suppress all TypeScript deprecation warnings
+[33m3dce7c2[m Remove deprecated baseUrl and paths incompatible with bundler moduleResolution
+[33mc14979e[m Suppress TypeScript 7.0 deprecation warnings with ignoreDeprecations flag
+[33mfedfb01[m Fix TypeScript moduleResolution: use 'bundler' instead of deprecated 'node'
+[33m4ebe5f6[m Fix blank page by rebuilding Next.js assets and standardize shared layout with SiteShell
+[33mb043882[m feat: Add comprehensive website pages and enhanced UI
+[33m5779437[m Update web landing page with management dashboard and professional content
+[33m287527a[m Initial commit
