@@ -1,118 +1,55 @@
-import { FileText, BookOpen, Video, Code, HelpCircle, Download } from 'lucide-react';
-import SiteShell from "../components/SiteShell";
+import { BookOpen, Code, Download, FileText, HelpCircle, Video } from 'lucide-react';
+import Link from 'next/link';
+import SiteShell from '../components/SiteShell';
+import { CtaBand, FeatureCard, PageHero, PageMain, PageSection, SectionHeader } from '../components/MarketingSections';
+
+const resources = [
+  { category: 'Documentation', icon: FileText, items: ['Getting Started Guide', 'User Manual', 'API Reference', 'FAQ'] },
+  { category: 'Learning Resources', icon: BookOpen, items: ['Knowledge Base', 'Best Practices', 'Case Studies', 'Webinars'] },
+  { category: 'Videos & Tutorials', icon: Video, items: ['Feature Tours', 'How-To Videos', 'Integration Guides', 'Admin Training'] },
+  { category: 'Developer Resources', icon: Code, items: ['SDK Documentation', 'Code Samples', 'API Sandbox', 'GitHub Repository'] },
+  { category: 'Support Center', icon: HelpCircle, items: ['Contact Support', 'Community Forum', 'Ticket System', 'Status Page'] },
+  { category: 'Downloads', icon: Download, items: ['Mobile Apps', 'Desktop Clients', 'White Papers', 'Templates'] }
+];
 
 export default function Resources() {
-  const resources = [
-    {
-      category: 'Documentation',
-      icon: FileText,
-      items: [
-        { title: 'Getting Started Guide', description: 'Quick setup and onboarding guide' },
-        { title: 'User Manual', description: 'Comprehensive feature documentation' },
-        { title: 'API Reference', description: 'Complete API documentation' },
-        { title: 'FAQ', description: 'Answers to common questions' }
-      ]
-    },
-    {
-      category: 'Learning Resources',
-      icon: BookOpen,
-      items: [
-        { title: 'Knowledge Base', description: 'Extensive article library' },
-        { title: 'Best Practices', description: 'Tips and implementation strategies' },
-        { title: 'Case Studies', description: 'Real-world success stories' },
-        { title: 'Webinars', description: 'Live and recorded training sessions' }
-      ]
-    },
-    {
-      category: 'Videos & Tutorials',
-      icon: Video,
-      items: [
-        { title: 'Feature Tours', description: 'Visual feature walkthroughs' },
-        { title: 'How-To Videos', description: 'Step-by-step video guides' },
-        { title: 'Integration Guides', description: 'Third-party integration tutorials' },
-        { title: 'Admin Training', description: 'Advanced administration videos' }
-      ]
-    },
-    {
-      category: 'Developer Resources',
-      icon: Code,
-      items: [
-        { title: 'SDK Documentation', description: 'Software development kits' },
-        { title: 'Code Samples', description: 'Implementation examples' },
-        { title: 'API Sandbox', description: 'Test environment' },
-        { title: 'GitHub Repository', description: 'Open source libraries' }
-      ]
-    },
-    {
-      category: 'Support Center',
-      icon: HelpCircle,
-      items: [
-        { title: 'Contact Support', description: 'Get help from our team' },
-        { title: 'Community Forum', description: 'Connect with other users' },
-        { title: 'Ticket System', description: 'Track support requests' },
-        { title: 'Status Page', description: 'System status updates' }
-      ]
-    },
-    {
-      category: 'Downloads',
-      icon: Download,
-      items: [
-        { title: 'Mobile Apps', description: 'iOS and Android applications' },
-        { title: 'Desktop Clients', description: 'Windows and Mac clients' },
-        { title: 'White Papers', description: 'Research and insights' },
-        { title: 'Templates', description: 'Customizable templates' }
-      ]
-    }
-  ];
-
-    return (
+  return (
     <SiteShell>
-<main className="landing-page">
-        <section className="hero-panel">
-          <div className="hero-branding">
-            <div className="hero-logo-alt">Resources</div>
-            <p className="hero-subtitle">Everything You Need to Succeed with Prasynx</p>
-          </div>
-        </section>
+      <PageMain>
+        <PageHero
+          eyebrow="Resources"
+          title="Guides, Support, and Tools for Every Team"
+          description="Find the materials your administrators, staff, and technical teams need to get the most from Prasynx."
+        />
 
-        <section className="resources-section">
-          <div className="resources-container">
-            <div className="resources-grid">
-              {resources.map((resource, index) => {
-                const Icon = resource.icon;
-                return (
-                  <article key={index} className="resource-category">
-                    <div className="resource-header">
-                      <Icon size={32} />
-                      <h3>{resource.category}</h3>
-                    </div>
-                    <ul className="resource-items">
-                      {resource.items.map((item, i) => (
-                        <li key={i}>
-                          <a href="#">
-                            <strong>{item.title}</strong>
-                            <p>{item.description}</p>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
-                );
-              })}
-            </div>
+        <PageSection>
+          <SectionHeader
+            eyebrow="Resource Library"
+            title="Organized for Quick Future Updates"
+            description="Each resource category is controlled by one array at the top of this page."
+          />
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {resources.map((resource) => (
+              <FeatureCard key={resource.category} icon={resource.icon} title={resource.category} description="Browse curated materials for this area.">
+                <div className="grid gap-3">
+                  {resource.items.map((item) => (
+                    <Link key={item} href="#" className="rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3 text-sm font-bold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700">
+                      {item}
+                    </Link>
+                  ))}
+                </div>
+              </FeatureCard>
+            ))}
           </div>
-        </section>
+        </PageSection>
 
-        <section className="resources-cta">
-          <div className="resources-container">
-            <div className="cta-box">
-              <h2>Can't find what you're looking for?</h2>
-              <p>Our support team is here to help you succeed</p>
-              <a href="/contact" className="btn btn-primary">Contact Support</a>
-            </div>
-          </div>
-        </section>
-      </main>
+        <CtaBand
+          title="Can't Find What You're Looking For?"
+          description="Our support team can point you to the right guide or help you plan the next step."
+          href="/contact"
+          action="Contact Support"
+        />
+      </PageMain>
     </SiteShell>
   );
 }

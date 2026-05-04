@@ -1,132 +1,101 @@
-import { Users, Award, Globe, Target, Lightbulb, Heart } from 'lucide-react';
-import SiteShell from "../components/SiteShell";
+import { Award, Globe, Heart, Lightbulb, Target, Users } from 'lucide-react';
+import SiteShell from '../components/SiteShell';
+import { CtaBand, FeatureCard, PageHero, PageMain, PageSection, SectionHeader } from '../components/MarketingSections';
+
+const values = [
+  { title: 'Innovation', description: 'Pushing boundaries to create practical next-generation education tools.', icon: Lightbulb },
+  { title: 'Integrity', description: 'Operating with transparency and ethical standards in everything we do.', icon: Award },
+  { title: 'Inclusion', description: 'Making quality education technology accessible to institutions of all sizes.', icon: Users },
+  { title: 'Impact', description: 'Transforming education outcomes for students, parents, and educators.', icon: Heart },
+  { title: 'Excellence', description: 'Keeping product quality, security, and service standards high.', icon: Target },
+  { title: 'Global Vision', description: 'Serving global institutions while respecting local education needs.', icon: Globe }
+];
+
+const milestones = [
+  { year: '2020', text: 'Prasynx founded with a mission to simplify education operations.' },
+  { year: '2021', text: 'Reached 100+ institutions across India.' },
+  { year: '2023', text: 'Expanded platform adoption across 15+ countries.' },
+  { year: '2024', text: 'Crossed 500+ institutions and millions of active users.' }
+];
+
+const team = [
+  { role: 'Founder & CEO', name: 'Ajay Kumar', expertise: 'Ed-Tech Visionary' },
+  { role: 'Chief Product Officer', name: 'Sarah Johnson', expertise: 'Product Innovation' },
+  { role: 'VP Engineering', name: 'Rajesh Desai', expertise: 'Technology Leadership' },
+  { role: 'VP Sales', name: 'Priya Saxena', expertise: 'Global Expansion' }
+];
 
 export default function About() {
-  const values = [
-    {
-      title: 'Innovation',
-      description: 'Constantly pushing boundaries to create next-generation solutions',
-      icon: Lightbulb
-    },
-    {
-      title: 'Integrity',
-      description: 'Operating with transparency and ethical standards in everything we do',
-      icon: Award
-    },
-    {
-      title: 'Inclusion',
-      description: 'Making quality education technology accessible to all institutions',
-      icon: Users
-    },
-    {
-      title: 'Impact',
-      description: 'Dedicated to transforming education for millions of students worldwide',
-      icon: Heart
-    },
-    {
-      title: 'Excellence',
-      description: 'Maintaining the highest standards in product quality and service',
-      icon: Target
-    },
-    {
-      title: 'Global Vision',
-      description: 'Operating globally while understanding local educational needs',
-      icon: Globe
-    }
-  ];
-
-  const team = [
-    { role: 'Founder & CEO', name: 'Ajay Kumar', expertise: 'Ed-Tech Visionary' },
-    { role: 'Chief Product Officer', name: 'Sarah Johnson', expertise: 'Product Innovation' },
-    { role: 'VP Engineering', name: 'Rajesh Desai', expertise: 'Technology Leadership' },
-    { role: 'VP Sales', name: 'Priya Saxena', expertise: 'Global Expansion' }
-  ];
-
-    return (
+  return (
     <SiteShell>
-<main className="landing-page">
-        <section className="hero-panel">
-          <div className="hero-branding">
-            <div className="hero-logo-alt">About Prasynx</div>
-            <p className="hero-subtitle">Transforming Education Through Technology</p>
+      <PageMain>
+        <PageHero
+          eyebrow="About Prasynx"
+          title="Transforming Education Through Better Systems"
+          description="We build secure, intelligent, and user-friendly tools that help institutions run smoothly and support better learning experiences."
+        />
+
+        <PageSection>
+          <div className="grid gap-8 lg:grid-cols-2">
+            <article className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
+              <h2 className="text-2xl font-black text-slate-950">Our Mission</h2>
+              <p className="mt-4 leading-8 text-slate-600">
+                To empower educational institutions with intelligent, secure, and user-friendly technology solutions that enhance learning experiences, streamline operations, and foster community engagement.
+              </p>
+            </article>
+            <article className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
+              <h2 className="text-2xl font-black text-slate-950">Our Story</h2>
+              <p className="mt-4 leading-8 text-slate-600">
+                Prasynx emerged from a simple observation: institutions were struggling with fragmented systems. We built one unified platform for every stakeholder in the education ecosystem.
+              </p>
+            </article>
           </div>
-        </section>
+        </PageSection>
 
-        <section className="about-section">
-          <div className="about-container">
-            <div className="about-intro">
-              <h2>Our Mission</h2>
-              <p>To empower educational institutions with intelligent, secure, and user-friendly technology solutions that enhance learning experiences, streamline operations, and foster community engagement.</p>
-            </div>
-
-            <div className="about-story">
-              <h2>Our Story</h2>
-              <p>Founded in 2020, Prasynx emerged from a simple observation: educational institutions were struggling with fragmented systems and outdated management practices. Our founders, driven by a passion for education, set out to build a unified platform that would serve every stakeholder in the educational ecosystem.</p>
-              <p>Today, Prasynx powers 500+ institutions across 15+ countries, serving millions of students, parents, and educators. We continue to innovate, driven by feedback from our community and a commitment to excellence.</p>
-            </div>
-
-            <div className="values-section">
-              <h2>Our Core Values</h2>
-              <div className="values-grid">
-                {values.map((value, index) => {
-                  const Icon = value.icon;
-                  return (
-                    <div key={index} className="value-card">
-                      <Icon size={40} />
-                      <h3>{value.title}</h3>
-                      <p>{value.description}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="achievements">
-              <h2>Key Milestones</h2>
-              <div className="achievements-grid">
-                <div className="achievement-item">
-                  <h3>2020</h3>
-                  <p>Prasynx founded with vision to transform education</p>
-                </div>
-                <div className="achievement-item">
-                  <h3>2021</h3>
-                  <p>Reached 100+ institutions in India</p>
-                </div>
-                <div className="achievement-item">
-                  <h3>2023</h3>
-                  <p>Expanded globally to 15+ countries</p>
-                </div>
-                <div className="achievement-item">
-                  <h3>2024</h3>
-                  <p>Crossed 500+ institutions and 5M+ users milestone</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="team-section">
-              <h2>Leadership Team</h2>
-              <div className="team-grid">
-                {team.map((member, index) => (
-                  <div key={index} className="team-member">
-                    <div className="team-member-avatar">{member.name.charAt(0)}</div>
-                    <h3>{member.name}</h3>
-                    <p className="team-role">{member.role}</p>
-                    <p className="team-expertise">{member.expertise}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+        <PageSection tone="soft">
+          <SectionHeader eyebrow="Values" title="The Principles Behind the Product" />
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {values.map((value) => (
+              <FeatureCard key={value.title} {...value} />
+            ))}
           </div>
-        </section>
+        </PageSection>
 
-        <section className="cta-section">
-          <div className="cta-content">
-            <h2>Join Us in Transforming Education</h2>
-            <p>Be part of a global movement to revolutionize how institutions operate and how students learn</p>
-            <a href="/book-demo" className="btn btn-primary btn-large">Schedule Demo</a>
+        <PageSection>
+          <SectionHeader eyebrow="Milestones" title="A Clear Growth Path" />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {milestones.map((milestone) => (
+              <article key={milestone.year} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5">
+                <div className="text-3xl font-black text-blue-600">{milestone.year}</div>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{milestone.text}</p>
+              </article>
+            ))}
           </div>
-        </section>
-      </main>
+        </PageSection>
+
+        <PageSection tone="soft">
+          <SectionHeader eyebrow="Team" title="Leadership Team" />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {team.map((member) => (
+              <article key={member.name} className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-lg shadow-slate-900/5">
+                <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-slate-950 text-2xl font-black text-white">
+                  {member.name.charAt(0)}
+                </div>
+                <h3 className="mt-5 text-lg font-black text-slate-950">{member.name}</h3>
+                <p className="mt-1 text-sm font-extrabold text-blue-600">{member.role}</p>
+                <p className="mt-2 text-sm text-slate-500">{member.expertise}</p>
+              </article>
+            ))}
+          </div>
+        </PageSection>
+
+        <CtaBand
+          title="Join Us in Transforming Education"
+          description="Be part of a global movement to improve how institutions operate and how students learn."
+          href="/book-demo"
+          action="Schedule Demo"
+        />
+      </PageMain>
     </SiteShell>
   );
 }

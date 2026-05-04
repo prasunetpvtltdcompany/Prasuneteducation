@@ -1,102 +1,66 @@
-import { Zap, Cloud, Lock, Smartphone, Gauge, Layers } from 'lucide-react';
-import SiteShell from "../components/SiteShell";
+import { Cloud, Gauge, Layers, Lock, Smartphone, Zap } from 'lucide-react';
+import SiteShell from '../components/SiteShell';
+import { CtaBand, FeatureCard, PageHero, PageMain, PageSection, SectionHeader } from '../components/MarketingSections';
+
+const features = [
+  { title: 'Cloud Infrastructure', description: 'Secure, scalable access from anywhere with high availability built in.', icon: Cloud },
+  { title: 'Real-Time Analytics', description: 'Instant visibility into campus operations, student progress, and team performance.', icon: Gauge },
+  { title: 'Enterprise Security', description: 'Encryption, permissioning, audit controls, and privacy-aware data handling.', icon: Lock },
+  { title: 'Mobile First Design', description: 'Responsive interfaces that work cleanly across phones, tablets, and desktops.', icon: Smartphone },
+  { title: 'Seamless Integration', description: 'API-first foundations for connecting existing tools and third-party systems.', icon: Layers },
+  { title: 'Lightning Fast', description: 'Optimized flows and stable architecture for everyday institutional usage.', icon: Zap }
+];
+
+const architecture = [
+  { title: 'Microservices', description: 'Modular services keep the platform flexible and easier to scale.' },
+  { title: 'API-First', description: 'Structured APIs support integrations with existing education systems.' },
+  { title: 'Data Privacy', description: 'Controls and access boundaries protect sensitive student and institution data.' },
+  { title: 'Auto-Scaling', description: 'Infrastructure adapts during peak admission, exam, and reporting periods.' }
+];
 
 export default function Platform() {
-  const features = [
-    {
-      title: 'Cloud-Based Infrastructure',
-      description: 'Secure, scalable platform accessible from anywhere, anytime.',
-      icon: Cloud
-    },
-    {
-      title: 'Real-Time Analytics',
-      description: 'Get instant insights into campus operations and student performance.',
-      icon: Gauge
-    },
-    {
-      title: 'Enterprise Security',
-      description: 'Military-grade encryption and compliance with international standards.',
-      icon: Lock
-    },
-    {
-      title: 'Mobile First Design',
-      description: 'Fully responsive interface optimized for all devices.',
-      icon: Smartphone
-    },
-    {
-      title: 'Seamless Integration',
-      description: 'Connect with existing systems through powerful APIs.',
-      icon: Layers
-    },
-    {
-      title: 'Lightning Fast',
-      description: 'Optimized for performance with 99.9% uptime guarantee.',
-      icon: Zap
-    }
-  ];
-
-    return (
+  return (
     <SiteShell>
-<main className="landing-page">
-        <section className="hero-panel">
-          <div className="hero-branding">
-            <div className="hero-logo-alt">Our Platform</div>
-            <p className="hero-subtitle">Built for Scalability, Security, and Performance</p>
-          </div>
-        </section>
+      <PageMain>
+        <PageHero
+          eyebrow="Platform"
+          title="A Future-Ready Foundation for Education Operations"
+          description="The Prasynx platform is designed for security, speed, integrations, and long-term maintainability."
+        />
 
-        <section className="platform-features">
-          <div className="platform-container">
-            <h2>Cutting-Edge Technology Stack</h2>
-            <div className="features-grid">
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={index} className="feature-card-large">
-                    <div className="feature-icon-large">
-                      <Icon size={48} />
-                    </div>
-                    <h3>{feature.title}</h3>
-                    <p>{feature.description}</p>
-                  </div>
-                );
-              })}
-            </div>
+        <PageSection>
+          <SectionHeader
+            eyebrow="Technology"
+            title="Modern, Scalable, and Easy to Operate"
+            description="Platform features are data-driven in this file, making future additions straightforward."
+          />
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {features.map((feature) => (
+              <FeatureCard key={feature.title} {...feature} />
+            ))}
           </div>
-        </section>
+        </PageSection>
 
-        <section className="platform-architecture">
-          <div className="platform-container">
-            <h2>Architecture Highlights</h2>
-            <div className="architecture-grid">
-              <div className="architecture-item">
-                <h3>Microservices</h3>
-                <p>Modular architecture for flexibility and scalability</p>
-              </div>
-              <div className="architecture-item">
-                <h3>API-First</h3>
-                <p>RESTful APIs for seamless third-party integrations</p>
-              </div>
-              <div className="architecture-item">
-                <h3>Data Privacy</h3>
-                <p>GDPR compliant with advanced data protection</p>
-              </div>
-              <div className="architecture-item">
-                <h3>Auto-Scaling</h3>
-                <p>Handles peak loads with automatic resource allocation</p>
-              </div>
-            </div>
+        <PageSection tone="soft">
+          <SectionHeader eyebrow="Architecture" title="Architecture Highlights" />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {architecture.map((item) => (
+              <article key={item.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5">
+                <div className="mb-4 h-1.5 w-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" />
+                <h3 className="text-lg font-black text-slate-950">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+              </article>
+            ))}
           </div>
-        </section>
+        </PageSection>
 
-        <section className="cta-section">
-          <div className="cta-content">
-            <h2>Experience the Next Generation of Educational Technology</h2>
-            <p>Get a personalized walkthrough of our platform and discover the possibilities.</p>
-            <a href="/book-demo" className="btn btn-primary btn-large">Request Demo</a>
-          </div>
-        </section>
-      </main>
+        <CtaBand
+          title="Experience the Next Generation of Educational Technology"
+          description="Get a personalized walkthrough of the platform and discover how it fits your institution."
+          href="/book-demo"
+          action="Request Demo"
+        />
+      </PageMain>
     </SiteShell>
   );
 }
